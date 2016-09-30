@@ -1,1 +1,2 @@
-print("s40223154")
+mystring = "s40223154"
+print(mystring)
