@@ -306,7 +306,7 @@ print("hello")
 ### 虎科大機械設計工程系
 
 &lt;small&gt;
-Created by [KMOLab](http://chiamingyen.github.io/kmolab/blog/)
+Created by [40223154](http://chiamingyen.github.io/kmolab/blog/)
 &lt;/small&gt;
 
 [甲班計算機程式課程網誌](blog/index.html)
@@ -316,6 +316,7 @@ Created by [KMOLab](http://chiamingyen.github.io/kmolab/blog/)
 [計算機程式教學影片](https://vimeo.com/user24079973)
 
 [電腦輔助設計室電腦硬體](http://project.mde.tw/blog/yen-dian-nao-fu-zhu-she-ji-shi-dian-nao-pei-zhi.html)
+
 </t>
 <t tx="amd.20161004104641.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
