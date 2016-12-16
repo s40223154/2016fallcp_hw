@@ -169,7 +169,7 @@
 <v t="leo.20161110105551.1"><vh>@edit 20161110.md</vh></v>
 <v t="leo.20161104143748.1"><vh>@edit 20161104.md</vh></v>
 <v t="leo.20161202083136.1"><vh>@edit 20161202.md</vh></v>
-<v t="leo.20161216095704.1" a="E"><vh>@clean 20161209.md</vh>
+<v t="leo.20161216095704.1" a="E"><vh>@edit 20161209.md</vh>
 <v t="leo.20161216095704.2"><vh>ch01 print() 與 input()</vh></v>
 <v t="leo.20161216095704.3"><vh>cp a w13</vh></v>
 <v t="leo.20161216095704.4"><vh>Brython editor</vh></v>
