@@ -1,0 +1,60 @@
+<html>
+<!-- I'm starting to develop an enhanced DeltaBot calculator for the web with a little WebGL 
+Source: http://www.thinkyhead.com/_delta/
+-->
+  <head>
+    <title>DeltaBot Calculator</title>
+    <style>
+      body { margin: 0; padding: 0; background: #458; color: #FFC; font-family: sans-serif; }
+      canvas, #main { float: left; width: 100%; margin-right: -100%; }
+      canvas { height: 100%; }
+      #main { padding: 0 4%; width: 92%; }
+      #main { font-family: monospace; }
+      .info { color: #AAF; }
+      .info span { color: #FFF; }
+      .info span span { color: #000; font-weight: bold; }
+      p { width: 30%; color: #FF0; }
+      #help strong { color: #0DD; }
+      img { display: none; }
+    </style>
+
+    <script src="three.min.js"></script>
+    <script src="THREEx.KeyboardState.js"></script>
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css" type="text/css" media="all" />
+    <script src="STLLoader.js"></script>
+    <script src="deltacalc.js"></script>
+
+  </head>
+  <body>
+    <div id="main">
+      <h1>DeltaBot Calculator</h1>
+      <p>This is a prototype of a DeltaBot Calculator which works like the well-known spreadsheet
+      while providing helpful graphical feedback, and (soon) sliders and controls to customize
+      the geometry. The calculation is a little off, as I haven't accounted for carriage size.</p>
+      <ul id="help">
+        <li><strong>ARROWS</strong> - Move the effector in the XY plane</li>
+        <li><strong>SHIFT + UP/DOWN</strong> - Move in the Z plane</li>
+        <li><strong>SPACE</strong> - Home the effector</li>
+        <li><strong>J L</strong> - Change the bot radius</li>
+        <li><strong>I K</strong> - Change the bot height</li>
+        <li><strong>G H</strong> - Change the rod spacing</li>
+        <li><strong>Z</strong> - Randomize the bot size</li>
+        <!-- li><strong>W S A D Q E</strong> - Rotate the shape</li -->
+      </ul>
+      <div class="info">
+        &nbsp;&nbsp;Radius: <span id="bot-radius"></span> &nbsp;
+        Height: <span id="bot-height"></span><br/>
+        &nbsp;Arm Gap: <span id="arm-space"></span>
+        &nbsp;Arm Len: <span id="arm-length"></span><br/>
+        <br/>
+        Effector: <span id="effector-pos"></span><br/>
+        &nbsp;&nbsp;Deltas: <span id="deltas"></span>
+      </div>
+    </div>
+    <img src="preview.png" />
+  </body>
+</html>
+
