@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>Misc - 2016Fall CPA 課程網誌 (虎尾科大MDE)</title>
+    <title>計算機程式 W14 範例整理 - 2016Fall CPA 課程網誌 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,27 +166,32 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
+<link rel="canonical" href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html">
 
-    <meta name="author" content="KMOL" />
-    <meta name="keywords" content="Misc" />
+        <meta name="author" content="40223154" />
+        <meta name="keywords" content="Brython" />
+        <meta name="description" content="本週的學習重點在導入 Leo Editor @clean 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性." />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="2016Fall CPA 課程網誌 (虎尾科大MDE)" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="2016Fall CPA 課程網誌 (虎尾科大MDE)"/>
-        <meta property="og:url" content=".."/>
-        <meta property="og:description" content="2016Fall CPA 課程網誌 (虎尾科大MDE)"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="計算機程式 W14 範例整理"/>
+        <meta property="og:url" content="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html"/>
+        <meta property="og:description" content="本週的學習重點在導入 Leo Editor @clean 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性."/>
+        <meta property="article:published_time" content="2016-12-09" />
+            <meta property="article:section" content="Course" />
+            <meta property="article:tag" content="Brython" />
+            <meta property="article:author" content="40223154" />
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="../theme/css/bootstrap.united.min.css" type="text/css"/>
-    <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="../theme/css/pygments/monokai.css" rel="stylesheet">
-    <link href="../theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
+    <link href="./theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="./theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
 
-        <link href="../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="2016Fall CPA 課程網誌 (虎尾科大MDE) ATOM Feed"/>
 
 <script type="text/javascript" src="http://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shCore.js"></script>
@@ -248,28 +253,28 @@ init_mathjax();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="../" class="navbar-brand">
+            <a href="./" class="navbar-brand">
 2016Fall CPA 課程網誌 (虎尾科大MDE)            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="../pages/about/">
+                         <li><a href="./pages/about/">
                              About
                           </a></li>
-                        <li >
-                            <a href="../category/course.html">Course</a>
-                        </li>
                         <li class="active">
-                            <a href="../category/misc.html">Misc</a>
+                            <a href="./category/course.html">Course</a>
+                        </li>
+                        <li >
+                            <a href="./category/misc.html">Misc</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><span>
-                <form class="navbar-search" action="../search.html">
+                <form class="navbar-search" action="./search.html">
                   <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
                 </form></span>
               </li>
-              <li><a href="../archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -281,49 +286,63 @@ init_mathjax();
     <div class="row">
         <div class="col-sm-9">
 
-            <article>
-                <h2><a href="../2016fall-min-jin-dang-tuan-rang-bu-lao-ji-fa-zhong-hui-wei-yuan-hui-shen-cha.html">2016Fall 民進黨團讓步 勞基法重回委員會審查</a></h2>
-                <div class="summary"><p>關乎勞工一例一休的勞基法修法，朝野昨協商有重大突破，民進黨團讓步，同意勞基法重回委員會審查，但有兩附帶條件就是出委員會後排除一個月冷凍期、各黨團簽署同意不杯葛。
-國民黨與時代力量黨團都表示要回去研商，對重審持正面意見。若在野黨都同意，最快下周將在委員會審查。
-「重審和我們當初呼籲一致」，國民黨團總召廖國棟表示，他們一開始就希望重審，也曾跟民進黨團討論，但前陣子協商不順利，只是重審有附帶條件，因此還需跟黨籍立委討論。
-時代力量總召徐永明說，重回委員會審查，一向是時代力量立場，且社會十分關注這件事，如果協商再沒結果，立法院會給社會負面形象，既然重回委員會審查時間足夠，今天應該會有最後結果。
-民進黨團總召柯建銘表示，如果在野黨團都同意，就可以在下周花三天時間處理勞基法，一天辦公聽會、兩天委員會審查。
-柯說，勞基法已拖延了三、四個月，只要出委員會，仍可以在院會討論協商，大家講好就好，這樣的解決方式，各黨團應該能接受，也是民進黨釋出的最大誠意。
-★更多相關新聞
-抓到了！勘驗一例一休錄影 王育敏二度喊「有異議」
-遭批主持議事裝聾作啞 陳瑩委屈哽咽
-別再叫我側翼 大綠小綠爭什麼？
-一例一休僅3成支持　近4成勞工休假不正常
-「一例一休」限時3天審議，工鬥盧其宏批：假退回真硬幹，絕食將繼續</p>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html"
+                       rel="bookmark"
+                       title="Permalink to 計算機程式 W14 範例整理">
+                        計算機程式 W14 範例整理
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-12-09T13:00:00+08:00"> 週五 09 十二月 2016</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="./author/40223154.html"><i class="fa fa-user"></i> 40223154</a>
 
-                    <a class="btn btn-default btn-xs" href="../2016fall-min-jin-dang-tuan-rang-bu-lao-ji-fa-zhong-hui-wei-yuan-hui-shen-cha.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="../2016fall-ji-jie-she-ji-zhu-ti-jiao-xue-midterm.html">2016Fall 機械設計主題教學(midterm)</a></h2>
-                <div class="summary"><p>知識管理與最佳化應用實驗室試圖利用計算機程式、網際內容管理、電腦輔助設計實習與協同產品設計實習等課程, 進行與機械設計相關的主題式教學, 其中包含強化創造力的教學、令學員熟習六種工程表達方式, 並且俱備融入協同設計所需要的四大面向知識與技能.</p>
 
-                    <a class="btn btn-default btn-xs" href="../2016fall-ji-jie-she-ji-zhu-ti-jiao-xue-midterm.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="../2016fall-cheng-shi-lian-xi-ti.html">2016Fall 程式練習題</a></h2>
-                <div class="summary"><p>已知截至第六週 2016fallcpa 的分組資料位於倉儲中的 <a href="./../w6_group.txt">w6_group.txt</a>, 而從學校修課系統下載的修課人員名條則為 <a href="./../w6_list.txt">w6_list.txt</a>, 請各組著手練習, 找出尚未納入分組的人員名單, 並研擬如何處置上課一個半月卻尚未進入情況的學員?</p>
 
-                    <a class="btn btn-default btn-xs" href="../2016fall-cheng-shi-lian-xi-ti.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="../2016fall-ji-jie-she-ji-zhu-ti-jiao-xue.html">2016Fall 機械設計主題教學</a></h2>
-                <div class="summary"><p>知識管理與最佳化應用實驗室試圖利用計算機程式、網際內容管理、電腦輔助設計實習與協同產品設計實習等課程, 進行與機械設計相關的主題式教學, 其中包含強化創造力的教學、令學員熟習六種工程表達方式, 並且俱備融入協同設計所需要的四大面向知識與技能.</p>
+<span class="label label-default">Tags</span>
+	<a href="./tag/brython.html">Brython</a>
+    <span class="label label-default">Lang</span>
+	<a href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html">en</a>
 
-                    <a class="btn btn-default btn-xs" href="../2016fall-ji-jie-she-ji-zhu-ti-jiao-xue.html">more ...</a>
+</footer><!-- /.post-info -->                    </div>
                 </div>
-            </article>
-            <hr/>
+                <p>本週的學習重點在導入 Leo Editor <a href="http://leoeditor.com/tutorial-programming.html">@clean</a> 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.</p>
+
+
+<p>以下為 <a href="http://mde.tw/2016fallcp/course/Python3Programs.txt">http://mde.tw/2016fallcp/course/Python3Programs.txt</a> 中的 ch01 綜合範例, 其餘範例位於本 Leo Editor 專案檔中的 "Python3 程式範例" 節點, 請各組一一將範例程式碼與執行結果, 放入各學員的課程網誌中.</p>
+<p>本課程 W15 - W18 週將利用 <a href="./../course/introduction_to_prog_python3_2012.pdf">introduction_to_prog_python3_2012.pdf</a> 與 <a href="./../course/python_for_everybody_2015.pdf">python_for_everybody_2015.pdf</a> 中有關物件導向的說明, 並且配合 <a href="https://github.com/mdecourse/webgame">https://github.com/mdecourse/webgame</a> 倉儲中的 Leo Editor 專案, 希望各組能夠了解利用 Python3 與 Brython 語法處理<a href="http://mde.tw/webgame/bs.html">靜態圖檔</a>、<a href="http://mde.tw/webgame/bunny.html">動態圖檔</a>與<a href="http://mde.tw/webgame/spacewar.html">網際遊戲</a>的運作原理, 順利完成各組的期末報告.</p>
+<!-- 導入 FileSaver -->
+
+<script type="text/javascript" src="./../FileSaver.min.js"></script>
+
+<!-- 導入 Brython 標準程式庫 -->
+
+<script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js">
+</script>
+
+<!-- 啟動 Brython -->
+
+<script>
+window.onload=function(){
+brython(1);
+}
+</script>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -335,44 +354,49 @@ init_mathjax();
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="../2016fall-min-jin-dang-tuan-rang-bu-lao-ji-fa-zhong-hui-wei-yuan-hui-shen-cha.html">
-                            2016Fall 民進黨團讓步 勞基法重回委員會審查
+                        <a href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html">
+                            計算機程式 W14 範例整理
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="../2016fall-ji-jie-she-ji-zhu-ti-jiao-xue-midterm.html">
-                            2016Fall 機械設計主題教學(midterm)
+                        <a href="./ji-suan-ji-cheng-shi-w14-fan-li-zheng-li.html">
+                            計算機程式 W14 範例整理
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="../2016fall-cheng-shi-lian-xi-ti.html">
-                            2016Fall 程式練習題
+                        <a href="./ji-suan-ji-cheng-shi-w13.html">
+                            計算機程式 W13
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="../2016fall-ji-jie-she-ji-zhu-ti-jiao-xue.html">
-                            2016Fall 機械設計主題教學
+                        <a href="./w11-brython-hui-tu-fan-li.html">
+                            W11 Brython 繪圖範例
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="./w10-brython-hui-tu-fan-li.html">
+                            W10 Brython 繪圖範例
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <li class="list-group-item"><a href="../categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+            <li class="list-group-item"><a href="./categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
                 <ul class="list-group" id="categories">
                     <li class="list-group-item">
-                        <a href="../category/course.html">
+                        <a href="./category/course.html">
                             <i class="fa fa-folder-open fa-lg"></i> Course
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="../category/misc.html">
+                        <a href="./category/misc.html">
                             <i class="fa fa-folder-open fa-lg"></i> Misc
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <li class="list-group-item"><a href="../tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+            <li class="list-group-item"><a href="./tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group list-inline tagcloud" id="tags">
                 </ul>
             </li>
@@ -418,13 +442,13 @@ init_mathjax();
       </div>
    </div>
 </footer>
-<script src="../theme/js/jquery.min.js"></script>
+<script src="./theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../theme/js/bootstrap.min.js"></script>
+<script src="./theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="../theme/js/respond.min.js"></script>
+<script src="./theme/js/respond.min.js"></script>
 
 
 </body>
