@@ -507,13 +507,12 @@ PLUGINS = ['liquid_tags.notebook', 'summary']
 
 DEFAULT_DATE = 'fs'</t>
 <t tx="leo.20161216095704.1">@language md
-Title: 計算機程式 W14 範例整理
+Title: W14 
 Date: 2016-12-09 13:00
 Category: Course
 Tags: Brython
 Author: 40223154
 
-本週的學習重點在導入 Leo Editor &lt;a href="http://leoeditor.com/tutorial-programming.html"&gt;@clean&lt;/a&gt; 節點指令的用法, 利用子節點管理各章節的範例, 逐一將程式改寫為 Brython 格式後, 直接在瀏覽器中執行. 讓學員了解使用階層式架構管理資料的便利性.
 
 &lt;!-- PELICAN_END_SUMMARY --&gt;
 
