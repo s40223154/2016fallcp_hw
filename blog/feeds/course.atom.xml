@@ -1,5 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/course.atom.xml" rel="self"></link><id>./</id><updated>2016-12-29T13:00:00+08:00</updated><entry><title>耶誕快樂</title><link href="./ye-dan-kuai-le.html" rel="alternate"></link><published>2016-12-29T13:00:00+08:00</published><updated>2016-12-29T13:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2016-12-29:./ye-dan-kuai-le.html</id><summary type="html">&lt;p&gt;耶誕快樂&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>2016Fall CPA 課程網誌 (虎尾科大MDE)</title><link href="./" rel="alternate"></link><link href="./feeds/course.atom.xml" rel="self"></link><id>./</id><updated>2016-12-30T14:00:00+08:00</updated><entry><title>產生亂數心得</title><link href="./chan-sheng-luan-shu-xin-de.html" rel="alternate"></link><published>2016-12-30T14:00:00+08:00</published><updated>2016-12-30T14:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2016-12-30:./chan-sheng-luan-shu-xin-de.html</id><summary type="html">&lt;p&gt;亂數是程式語言學習上的一個重點，學校的程式課程多半會教、出練習題，&lt;/p&gt;
+&lt;p&gt;因此也是新手常遇到的問題。&lt;/p&gt;
+&lt;p&gt;在此列出一點C語言中亂數使用上的心得以及常犯錯誤&lt;/p&gt;
+&lt;p&gt;==&lt;/p&gt;
+&lt;p&gt;[1] 入門用法&lt;/p&gt;
+&lt;p&gt;srand( time(NULL) );
+for( i = 0; i &amp;lt; 10; i++ )
+    printf( "Random number #%d: %d\n", i, rand() );&lt;/p&gt;
+&lt;p&gt;呼叫 srand()函式將亂數初始化，可以 time(NULL) 作為初始種子(seed)，
+或自行設定任意數。不先呼叫本函數、或種子值固定，都會造成新手常見
+的「每次執行產生的亂數結果都相同」問題。&lt;/p&gt;
+&lt;p&gt;==&lt;/p&gt;
+&lt;p&gt;[2] 產生固定範圍的亂數&lt;/p&gt;
+&lt;h1&gt;0 ~ n-1&lt;/h1&gt;
+&lt;p&gt;一般常見的寫法有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;rand() % n;&lt;/li&gt;
+&lt;li&gt;(int)( n * ( rand() / (float)(RAND_MAX+1) ) );&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;兩種寫法n的上限皆不能大於RAND_MAX，否則某些範圍內的數字永遠不會出現。(Why?)
+一般C語言的RAND_MAX只有32767，於使用上需特別注意。&lt;/p&gt;
+&lt;p&gt;第1種寫法在n有點大時( RAND_MAX/k &amp;lt; n &amp;lt;=RAND_MAX, say k &amp;lt; 5 )可能會出現
+亂數分佈不均。因此以第2種為佳。&lt;/p&gt;
+&lt;h1&gt;a ~ b&lt;/h1&gt;
+&lt;p&gt;將上面的寫法改一下，變成 a + ( 0 ~ (b-a+1) - 1 )即可。
+也就是上面的 n 變成 b-a+1。&lt;/p&gt;
+&lt;p&gt;==&lt;/p&gt;
+&lt;p&gt;[3] 產生更大範圍的整數亂數&lt;/p&gt;
+&lt;p&gt;使用系統內建的rand()上限一般只到 32767，使用上不方便，會有前述的問題。
+改善方法有很多，這邊列出一種 RAND_MAX = 32767 時的簡單改寫法：&lt;/p&gt;
+&lt;p&gt;int rand31() {
+    // RAND31_MAX = 2147483647
+    return ( (rand() &amp;lt;&amp;lt; 16) + (rand() &amp;lt;&amp;lt; 1) + (rand() &amp;amp; 1) );
+}&lt;/p&gt;
+&lt;p&gt;unsigned int rand32() {
+    // RAND32_MAX = 4294967295
+    return ( (rand() &amp;lt;&amp;lt; 17) + (rand() &amp;lt;&amp;lt; 2) + (rand() &amp;amp; 3) );
+}&lt;/p&gt;
+&lt;p&gt;分別可產生32位元的有號及無號正整數亂數。&lt;/p&gt;
+&lt;p&gt;==&lt;/p&gt;
+&lt;p&gt;[4] 產生 0 到 小於1 的浮點數&lt;/p&gt;
+&lt;p&gt;上面的例子用到的 rand() / (float)(RAND_MAX+1)&lt;/p&gt;
+&lt;p&gt;即可產生0~小於1的浮點數，但是如上所述，應用範圍只能到RAND_MAX。&lt;/p&gt;
+&lt;p&gt;RAND_MAX=32767簡單的改寫法如下，應用範圍提高到 16777215，是32位元浮點數極限：&lt;/p&gt;
+&lt;p&gt;float rand24() {
+    // RAND24_MAX = 16777215
+    return ( (rand() &amp;lt;&amp;lt; 9) + (rand() &amp;gt;&amp;gt; 6) ) / (float)0x01000000;
+}&lt;/p&gt;
+&lt;p&gt;[例] 產生在選定範圍均勻分佈的浮點亂數&lt;/p&gt;
+&lt;h1&gt;產生 0 ~ 7777777的整數亂數： n = (int)( 7777778 * rand24() )&lt;/h1&gt;
+&lt;h1&gt;產生 -2.5 ~ 2.5 的浮點亂數： x = ( rand24() - 0.5 ) * 5&lt;/h1&gt;
+&lt;h1&gt;產生   a  ~  b  的浮點亂數： x = rand24() * ( b - a ) + a&lt;/h1&gt;
+&lt;p&gt;==&lt;/p&gt;
+&lt;p&gt;[5] 產生特殊分佈的亂數&lt;/p&gt;
+&lt;p&gt;這邊我們以 frand()函數 表示 範圍為0~小於1的浮點數 uniform random number
+frand() 可以是上例的rand24() 或其他方式得到的亂數&lt;/p&gt;
+&lt;h1&gt;高斯分佈(常態分佈)亂數 http://en.wikipedia.org/wiki/Normal_distribution&lt;/h1&gt;
+&lt;p&gt;*產生平均值μ=0 標準差平方σ^2=1 的分佈&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; Gaussian0_rand = sqrt( -2 * log( frand() ) ) * sin( 2 * PI * frand() )
+
+ 使用2次frand()亂數產生高斯亂數。需要注意的是當第1個 frand() = 0 時，
+ 會出現log(0)的數學錯誤，因此在使用上需做修正。可以用if來判斷，或是
+ 將 log( frand() ) 改寫成 log( frand() + min_float )
+ min_float 是指 32bits 或 64bits 浮點數中最小的正浮點數。
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;*產生平均值μ 標準差σ的分佈&lt;/p&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; Gaussian_rand = Gaussian0_rand * σ + μ
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;==&lt;/p&gt;
+&lt;h1&gt;其他分佈&lt;/h1&gt;
+&lt;p&gt;如果要做出特殊形狀分佈的亂數，只要那個形狀你有辦法積分，「大概」就可以
+「簡單」的從 uniform rand# 轉成該函數的形狀&lt;/p&gt;
+&lt;p&gt;│f(x)                       p                     b
+│         ◢◣            ∫ f(x)dx = frand() * ∫ f(x)dx
+│   ◢◣◢██◣            a                     a
+│ ◢██████◣
+├──────────&amp;gt;        解方程式得到 p = g( frand() )
+   a       p      b&lt;/p&gt;
+&lt;p&gt;p就是新的亂數，其分佈應該是如你所願。&lt;/p&gt;
+&lt;p&gt;[例] f(x) = C ， 從a積到b。 解： p = frand() * (b-a) + a  (是否似曾相識！！)&lt;/p&gt;
+&lt;p&gt;[例] f(x) = x ， 從a積到b。 解： p = sqrt( frand() * (b^2 - a^2) + a^2 )&lt;/p&gt;
+&lt;p&gt;==&lt;/p&gt;
+&lt;p&gt;以上的簡單介紹相信在一般作業上的使用已經足夠。&lt;/p&gt;
+&lt;p&gt;由於內建的亂數是偽亂數，可預測性高，&lt;/p&gt;
+&lt;p&gt;萬萬別使用在對於安全性或隨機性要求很高的商業行為或是學術研究&lt;/p&gt;
+&lt;p&gt;有需求的人再自行去研究吧&lt;/p&gt;
+&lt;p&gt;http://en.wikipedia.org/wiki/Random_number_generation&lt;/p&gt;
+&lt;p&gt;另外，RAND_MAX的值隨著編譯器的種類會有很大差別，使用上述擴大亂數範圍&lt;/p&gt;
+&lt;p&gt;的簡單函數時記得先確認自己RAND_MAX的值再加以改寫，以免出現不明錯誤....&lt;/p&gt;
+</summary><category term="Brython"></category></entry><entry><title>新年快樂</title><link href="./xin-nian-kuai-le.html" rel="alternate"></link><published>2016-12-30T13:00:00+08:00</published><updated>2016-12-30T13:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2016-12-30:./xin-nian-kuai-le.html</id><summary type="html">&lt;!-- 導入 Brython 標準程式庫 --&gt;
+
+&lt;script type="text/javascript" 
+    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js"&gt;
+&lt;/script&gt;
+
+&lt;!-- 啟動 Brython --&gt;
+
+&lt;script&gt;
+window.onload=function(){
+brython(1);
+}
+&lt;/script&gt;
+
+&lt;!-- 以下可以執行  Brython 程式 --&gt;
+
+&lt;div id="newyear"&gt;&lt;/div&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document 
+from browser import html
+import random
+print_location = document["newyear"]
+
+def gen_int():
+    num = random.randint(1,49)
+    #設法將num列印在網頁上
+    #print_location = document["newyear"]
+    print_location &lt;= num+html.BR()
+
+
+def lottery(e):
+    for i in range (6):
+        gen_int()
+    print_location &lt;="恭喜中獎!!"+html.BR()
+
+#document["but1"].bind("click",gen_int)
+document["but1"].bind("click",lottery)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="but1"&gt;產生整數亂數&lt;/button&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>耶誕快樂</title><link href="./ye-dan-kuai-le.html" rel="alternate"></link><published>2016-12-29T13:00:00+08:00</published><updated>2016-12-29T13:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2016-12-29:./ye-dan-kuai-le.html</id><summary type="html">&lt;p&gt;耶誕快樂&lt;/p&gt;
 
 
 &lt;!-- 導入 Brython 標準程式庫 --&gt;

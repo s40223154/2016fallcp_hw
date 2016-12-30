@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>W10 Brython 繪圖範例 - 2016Fall CPA 課程網誌 (虎尾科大MDE)</title>
+    <title>新年快樂 - 2016Fall CPA 課程網誌 (虎尾科大MDE)</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -166,21 +166,21 @@ init_mathjax = function() {
 init_mathjax();
 </script>
 
-<link rel="canonical" href="./w10-brython-hui-tu-fan-li.html">
+<link rel="canonical" href="./xin-nian-kuai-le.html">
 
-        <meta name="author" content="s40223154" />
+        <meta name="author" content="40223154" />
         <meta name="keywords" content="Brython" />
-        <meta name="description" content="Brython 繪圖" />
+        <meta name="description" content="window.onload=function(){ brython(1); } from browser import document from browser import html import random print_location = document[&#34;newyear&#34;] def gen_int(): num = random.randint(1,49) #設法將num列印在網頁上 #print_location = document[&#34;newyear&#34;] print_location" />
 
         <meta property="og:site_name" content="2016Fall CPA 課程網誌 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="W10 Brython 繪圖範例"/>
-        <meta property="og:url" content="./w10-brython-hui-tu-fan-li.html"/>
-        <meta property="og:description" content="Brython 繪圖"/>
-        <meta property="article:published_time" content="2016-11-18" />
+        <meta property="og:title" content="新年快樂"/>
+        <meta property="og:url" content="./xin-nian-kuai-le.html"/>
+        <meta property="og:description" content="window.onload=function(){ brython(1); } from browser import document from browser import html import random print_location = document[&#34;newyear&#34;] def gen_int(): num = random.randint(1,49) #設法將num列印在網頁上 #print_location = document[&#34;newyear&#34;] print_location"/>
+        <meta property="article:published_time" content="2016-12-30" />
             <meta property="article:section" content="Course" />
             <meta property="article:tag" content="Brython" />
-            <meta property="article:author" content="s40223154" />
+            <meta property="article:author" content="40223154" />
 
 
     <!-- Bootstrap -->
@@ -290,10 +290,10 @@ init_mathjax();
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="./w10-brython-hui-tu-fan-li.html"
+                    <a href="./xin-nian-kuai-le.html"
                        rel="bookmark"
-                       title="Permalink to W10 Brython 繪圖範例">
-                        W10 Brython 繪圖範例
+                       title="Permalink to 新年快樂">
+                        新年快樂
                     </a>
                 </h1>
             </header>
@@ -303,10 +303,10 @@ init_mathjax();
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-11-18T14:00:00+08:00"> 週五 18 十一月 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-12-30T13:00:00+08:00"> 週五 30 十二月 2016</time>
     </span>
             <span class="label label-default">By</span>
-            <a href="./author/s40223154.html"><i class="fa fa-user"></i> s40223154</a>
+            <a href="./author/40223154.html"><i class="fa fa-user"></i> 40223154</a>
 
 
 
@@ -315,12 +315,7 @@ init_mathjax();
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Brython 繪圖</p>
-
-
-<p>繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖</p>
-
-<!-- 導入 Brython 標準程式庫 -->
+                <!-- 導入 Brython 標準程式庫 -->
 
 <script type="text/javascript" 
     src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js">
@@ -334,190 +329,33 @@ brython(1);
 }
 </script>
 
-<!-- 以下實際利用  Brython 畫兩條直線 -->
+<!-- 以下可以執行  Brython 程式 -->
 
-<canvas id="guitarchord" width="600" height="400"></canvas>
-
-<script type="text/python3">
-from browser import document as doc
-import math
-
-canvas = doc["guitarchord"]
-ctx = canvas.getContext("2d")
-
-
-ctx.beginPath()
-ctx.lineWidth = 1
-inc = 10
-for i in range(5):
-    ctx.moveTo(100+i*inc, 100)
-    ctx.lineTo(100+i*inc, 200)
-
-
-ctx.lineWidth = 1
-
-ctx.moveTo(200, 200)
-ctx.lineTo(250, 350)
-ctx.lineTo(350, 200)
-ctx.lineTo(200, 200)    
-
-# 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-ctx.strokeStyle = "black"
-ctx.stroke()
-ctx.closePath()
-</script>
-
-<!-- PELICAN_END_SUMMARY -->
-
-<p>繪圖流程, 導入程式庫, 啟動, 然後引用各種模組開始繪圖</p>
-
-<!-- 導入 Brython 標準程式庫 -->
-
-<script type="text/javascript" 
-    src="https://cdn.rawgit.com/brython-dev/brython/master/www/src/brython_dist.js">
-</script>
-
-<!-- 啟動 Brython -->
-
-<script>
-window.onload=function(){
-brython(1);
-}
-</script>
-
-<!-- 以下實際利用  Brython 畫方格線 -->
-
-<canvas id="japanflag3" width="600" height="300"></canvas>
-
-<div id="container3"></div>
+<div id="newyear"></div>
 
 <script type="text/python3">
-from browser import document as doc
+from browser import document 
 from browser import html
-import math
-import re
-# 準備繪圖畫布
-canvas = doc["japanflag3"]
-container = doc["container3"]
-ctx = canvas.getContext("2d")
-# 以下可以利用 ctx 物件進行畫圖
+import random
+print_location = document["newyear"]
 
-# 水平線
-for i in range(5):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    if i == 0:
-        ctx.lineWidth = 7
-    else:
-        ctx.lineWidth = 1
-    ctx.moveTo(99, 100+i*30)
-    ctx.lineTo(201, 100+i*30)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
+def gen_int():
+    num = random.randint(1,49)
+    #設法將num列印在網頁上
+    #print_location = document["newyear"]
+    print_location <= num+html.BR()
 
-# 垂直線
-for i in range(6):
-    ctx.beginPath()
-# 設定線的寬度為 1 個單位
-    ctx.lineWidth = 1
-    ctx.moveTo(100+i*20, 100)
-    ctx.lineTo(100+i*20, 220)
-    # 設定顏色為藍色, 也可以使用 "rgb(0, 0, 255)" 字串設定顏色值
-    ctx.strokeStyle = "blue"
-    ctx.stroke()
-    ctx.closePath()
 
-# 1 與 A7
-ctx.beginPath()
-ctx.fillStyle = 'black'
-ctx.strokeStyle = "black"
-ctx.font = "30px Arial"
-ctx.fillText("A7", 100, 70)
-ctx.arc(50, 50, 9, 0, 2*math.pi, False)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
+def lottery(e):
+    for i in range (6):
+        gen_int()
+    print_location <="恭喜中獎!!"+html.BR()
 
-ctx.beginPath()
-ctx.fillStyle = 'white'
-ctx.font = "16px Arial"
-ctx.fillText("1", 45, 55)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-
-# 3
-ctx.beginPath()
-ctx.fillStyle = 'black'
-ctx.strokeStyle = "black"
-ctx.arc(50, 80, 9, 0, 2*math.pi, False)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-
-ctx.beginPath()
-ctx.fillStyle = 'white'
-ctx.font = "16px Arial"
-ctx.fillText("3", 45, 85)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-
-# 4
-ctx.beginPath()
-ctx.fillStyle = 'black'
-ctx.strokeStyle = "black"
-ctx.arc(50, 110, 9, 0, 2*math.pi, False)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-
-ctx.beginPath()
-ctx.fillStyle = 'white'
-ctx.font = "16px Arial"
-ctx.fillText("4", 45, 115)
-ctx.fill()
-ctx.stroke()
-ctx.closePath()
-
-# o
-ctx.beginPath()
-ctx.arc(50, 140, 7, 0, 2*math.pi, False)
-ctx.lineWidth =3
-ctx.strokeStyle = "black"
-ctx.stroke()
-ctx.closePath()
-
-# x
-ctx.beginPath()
-#ctx.arc(50, 170, 7, 0, 2*math.pi, False)
-ctx.moveTo(44, 164)
-ctx.lineTo(56, 176)
-ctx.moveTo(56, 164)
-ctx.lineTo(44, 176)
-ctx.lineWidth =3
-ctx.strokeStyle = "black"
-ctx.stroke()
-ctx.closePath()
-
-'''
-# 以下將 canvas 畫布內容轉為 img tag, 並且顯示在 container 物件
-img = canvas.toDataURL("image/png")
-# 利用 re.sub, 將原本要直接開圖檔的 data:image 標頭, 改為 data:application/octet-stream, 可直接下載存檔
-# 使用 re 模組之前必須先 import re
-img = re.sub("^data:image\/[^;]", "data:application/octet-stream", img)
-# 宣告 anchor markup attribute download, 可以指定下載儲存檔名
-container <= html.A("save image", href=img, download="guitar_chord.png")
-'''
+#document["but1"].bind("click",gen_int)
+document["but1"].bind("click",lottery)
 </script>
 
-<p>請注意, 開發 Brython 程式時, 建議使用 Firefox 開啟網誌, 因為反應速度較 Chrome 快速.</p>
-
-<p>請各組利用上列程式範例片段, 完成下列和弦繪圖:</p>
-
-<p><img src="./../graphics/BasicMajorOpenChords.jpg" /></p>
+<p><button id="but1">產生整數亂數</button></p>
             </div>
             <!-- /.entry-content -->
         </article>

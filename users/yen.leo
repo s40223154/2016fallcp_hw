@@ -180,6 +180,8 @@
 <v t="leo.20161216101402.9"><vh>ch02 str() 與 int() 與 float()</vh></v>
 </v>
 <v t="leo.20161229233649.1"><vh>@edit 20161229.md</vh></v>
+<v t="leo.20161230133620.1"><vh>@edit 20161230.md</vh></v>
+<v t="leo.20161230141724.1"><vh>@edit 20161230-1.md</vh></v>
 </v>
 </v>
 </v>
@@ -322,7 +324,7 @@ print("hello")
 Created by [40223154](https://s40223154.github.io/2016fallcp_hw/#/)
 &lt;/small&gt;
 
-[甲班計算機程式課程網誌](blog/index.html)
+[40223154計算機程式課程網誌](blog/index.html)
 
 [乙班計算機程式課程網誌](https://mdecourse.github.io/2016fallcpb/blog)
 
