@@ -137,7 +137,68 @@ def lottery(e):
 document["but1"].bind("click",lottery)
 &lt;/script&gt;
 
-&lt;p&gt;&lt;button id="but1"&gt;產生整數亂數&lt;/button&gt;&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>耶誕快樂</title><link href="./ye-dan-kuai-le.html" rel="alternate"></link><published>2016-12-29T13:00:00+08:00</published><updated>2016-12-29T13:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2016-12-29:./ye-dan-kuai-le.html</id><summary type="html">&lt;p&gt;耶誕快樂&lt;/p&gt;
+&lt;p&gt;&lt;button id="but1"&gt;產生整數亂數&lt;/button&gt;&lt;/p&gt;
+&lt;pre class="brush: python"&gt;
+&lt;div id="newyear"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import html
+import random
+print_location = document["newyear"]
+
+def gen_int():
+    num = random.randint(1, 49)
+    # 設法將 num 列印在網頁上
+    #print_location = document["newyear"]
+    print_location &lt;= num + html.BR()
+
+def lottery(e):
+    for i in range(6):
+        gen_int()
+    print_location &lt;= "恭喜中獎!" + html.BR()
+
+#document["but1"].bind("click", gen_int)
+document["but1"].bind("click", lottery)
+&lt;/script&gt;
+&lt;button id="but1"&gt;產生整數亂數&lt;/button&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;因為上述程式可能會產生相同的號碼, 改用&lt;a href="https://docs.python.org/3/library/random.html#random.sample"&gt; random.sample()&lt;/a&gt;, 使其產生六個不同的整數!!&lt;/p&gt;
+
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import html
+import random
+print_location = document["newyear"]
+
+def lottery(e):
+    num_list = random.sample(list(range(1, 50)), 6)
+    for i in range(6):
+        print_location &lt;= num_list[i] + html.BR()
+    print_location &lt;= "恭喜中獎!" + html.BR()
+
+document["but2"].bind("click", lottery)
+&lt;/script&gt;
+
+&lt;p&gt;&lt;button id="but2"&gt;恭喜中獎&lt;/button&gt;&lt;/p&gt;
+
+&lt;pre class="brush: python"&gt;
+&lt;script type="text/python3"&gt;
+from browser import document
+from browser import html
+import random
+print_location = document["newyear"]
+
+def lottery(e):
+    num_list = random.sample(list(range(1, 50)), 6)
+    for i in range(6):
+        print_location &lt;= num_list[i] + html.BR()
+    print_location &lt;= "恭喜中獎!" + html.BR()
+
+document["but2"].bind("click", lottery)
+&lt;/script&gt;
+&lt;button id="but2"&gt;恭喜中獎&lt;/button&gt;
+&lt;/pre&gt;</summary><category term="Brython"></category></entry><entry><title>耶誕快樂</title><link href="./ye-dan-kuai-le.html" rel="alternate"></link><published>2016-12-29T13:00:00+08:00</published><updated>2016-12-29T13:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2016-12-29:./ye-dan-kuai-le.html</id><summary type="html">&lt;p&gt;耶誕快樂&lt;/p&gt;
 
 
 &lt;!-- 導入 Brython 標準程式庫 --&gt;
