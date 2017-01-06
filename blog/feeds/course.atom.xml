@@ -76,8 +76,13 @@ def animate():
     x2 = x1 + r*math.cos(theta*deg)
     y2 = y1 + r*math.sin(theta*deg)  
     line(x1,y1,x2,y2)
+    #再加一條小線段
+    x3 = x2 + 50*math.cos(10*theta*deg)
+    y3 = y2 + 50*math.sin(10*theta*deg)
+    line(x2,y2,x3,y3)
     circle(x1,y1,5)
     theta += 1
+
 timer.set_interval(animate,50)
 
 '''
