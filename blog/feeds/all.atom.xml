@@ -120,6 +120,10 @@ import math
 canvas = document["onebar"]
 ctx = canvas.getContext("2d")
 
+# 取畫布的寬與高度
+width = canvas.width
+height = canvas.height
+
 # 畫圓函式
 def circle(x,y,r):
     ctx.beginPath()
@@ -147,14 +151,40 @@ def line (x1,y1,x2,y2):
 line(200,200,200,300)
 circle(200, 200, 5)
 
+
 x1 = 200
 y1 = 200
 r = 100
 deg = math.pi/180
 
-x2 = x1 + r*math.cos(30*deg)
-y2 = y1 + r*math.sin(30*deg)
-line(x1,y1,x2,y2)
+theta = 0
+
+#每隔特定時間,進行動畫繪製
+def animate():
+    global theta 
+    #刷新畫布
+    ctx.clearRect(0,0,width,height)
+    #逐一重新繪製直線與圓心球
+    x2 = x1 + r*math.cos(theta*deg)
+    y2 = y1 + r*math.sin(theta*deg)  
+    line(x1,y1,x2,y2)
+    #再加一條小線段
+    x3 = x2 + 50*math.cos(10*theta*deg)
+    y3 = y2 + 50*math.sin(10*theta*deg)
+    line(x2,y2,x3,y3)
+    circle(x1,y1,5)
+    theta += 1
+
+timer.set_interval(animate,50)
+
+'''
+for i in range(36):
+    theta = i*10
+
+    x2 = x1 + r*math.cos(theta*deg)
+    y2 = y1 + r*math.sin(theta*deg)    
+    line(x1,y1,x2,y2)
+'''
 
 &lt;/script&gt;
 
