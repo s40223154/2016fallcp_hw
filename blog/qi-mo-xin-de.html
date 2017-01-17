@@ -170,13 +170,13 @@ init_mathjax();
 
         <meta name="author" content="40223154" />
         <meta name="keywords" content="Brython" />
-        <meta name="description" content="產生亂數心得: 隨機亂數 (可額外加上print印出結果) 隨機挑選0~49的數字 num = random.randint(1, 49) 數字在1-49之間 for i in range(6) 我要產生出6個號碼 print_location &lt;= &#34;恭喜中獎!&#34; + html.BR() 產生後我要印出恭喜中獎+換行 心得: 學到利用亂數模組產生 取得使用者所猜整數，根據使用者與標準答案比較大小，並且回應提示字串 單線旋轉動畫心得: 猜數字心得: 繪圖心得:" />
+        <meta name="description" content="產生亂數心得: 隨機亂數 (可額外加上print印出結果) 隨機挑選0~49的數字 num = random.randint(1, 49) 數字在1-49之間 for i in range(6) 我要產生出6個號碼 print_location &lt;= &#34;恭喜中獎!&#34; + html.BR() 產生後我要印出恭喜中獎+換行 心得: 學到利用亂數模組產生 取得使用者所猜整數，根據使用者與標準答案比較大小，並且回應提示字串 單線旋轉動畫心得: 猜數字心得: 1.print會列印在主控台 2.第二種列印資料方法利用alert利用broswer模組import 3.真正實用第三種用這個id跟con1 = document[&#34;con&#34;]的document做綁定 綁定好再用特殊語法 con1&lt;=document[&#34;con&#34;] 需要跳行要用 + html.BR()來跳行 利用try ， except來執行 ..." />
 
         <meta property="og:site_name" content="2016Fall CPA 課程網誌 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="期末心得"/>
         <meta property="og:url" content="./qi-mo-xin-de.html"/>
-        <meta property="og:description" content="產生亂數心得: 隨機亂數 (可額外加上print印出結果) 隨機挑選0~49的數字 num = random.randint(1, 49) 數字在1-49之間 for i in range(6) 我要產生出6個號碼 print_location &lt;= &#34;恭喜中獎!&#34; + html.BR() 產生後我要印出恭喜中獎+換行 心得: 學到利用亂數模組產生 取得使用者所猜整數，根據使用者與標準答案比較大小，並且回應提示字串 單線旋轉動畫心得: 猜數字心得: 繪圖心得:"/>
+        <meta property="og:description" content="產生亂數心得: 隨機亂數 (可額外加上print印出結果) 隨機挑選0~49的數字 num = random.randint(1, 49) 數字在1-49之間 for i in range(6) 我要產生出6個號碼 print_location &lt;= &#34;恭喜中獎!&#34; + html.BR() 產生後我要印出恭喜中獎+換行 心得: 學到利用亂數模組產生 取得使用者所猜整數，根據使用者與標準答案比較大小，並且回應提示字串 單線旋轉動畫心得: 猜數字心得: 1.print會列印在主控台 2.第二種列印資料方法利用alert利用broswer模組import 3.真正實用第三種用這個id跟con1 = document[&#34;con&#34;]的document做綁定 綁定好再用特殊語法 con1&lt;=document[&#34;con&#34;] 需要跳行要用 + html.BR()來跳行 利用try ， except來執行 ..."/>
         <meta property="article:published_time" content="2017-01-13" />
             <meta property="article:section" content="Course" />
             <meta property="article:tag" content="Brython" />
@@ -326,7 +326,26 @@ init_mathjax();
 <p>產生後我要印出恭喜中獎+換行</p>
 <p>心得: 學到利用亂數模組產生 取得使用者所猜整數，根據使用者與標準答案比較大小，並且回應提示字串</p>
 <p>單線旋轉動畫心得:</p>
-<p>猜數字心得:</p>
+<p>猜數字心得:
+1.print會列印在主控台
+2.第二種列印資料方法利用alert利用broswer模組import
+3.真正實用第三種<div id="con"></div>用這個id跟con1 = document["con"]的document做綁定
+  綁定好再用特殊語法 con1&lt;=document["con"]</p>
+<p>需要跳行要用 + html.BR()來跳行 </p>
+<p>利用try ， except來執行
+如果輸入正確會跑進try來執行
+出錯的話會跑到except</p>
+<p>再用import random
+用import.randint(某數字，某數字)======&gt;多少到多少之間
+再用使用者猜的數字 呼叫int才能轉成整數 如果輸入不適整數可以加入try，except
+再設一個猜測次數
+接著讓他一猜使用while迴圈讓他一直猜</p>
+<p>心得:這次猜數字要用到特殊語法con1&lt;=document["con"]
+再用去http://wordpress-2015course.rhcloud.com/?p=4319
+使用猜數字得程式</p>
+<p>學習到利用 random 模組產生特定範圍內的整數</p>
+<p>猜對印出比正確數字大或小的提示, 直到使用者猜對或因累計至預設猜謎次數後跳出while迴圈</p>
+<p>用程式來寫遊戲那麼有趣, 讓我對這塊領域又更感興趣</p>
 <p>繪圖心得:</p>
             </div>
             <!-- /.entry-content -->
