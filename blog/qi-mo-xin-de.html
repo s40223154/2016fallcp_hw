@@ -346,7 +346,33 @@ init_mathjax();
 <p>學習到利用 random 模組產生特定範圍內的整數</p>
 <p>猜對印出比正確數字大或小的提示, 直到使用者猜對或因累計至預設猜謎次數後跳出while迴圈</p>
 <p>用程式來寫遊戲那麼有趣, 讓我對這塊領域又更感興趣</p>
-<p>繪圖心得:</p>
+<p>繪圖心得:
+canvas id="G Major" width="600" height="250"</p>
+<p>畫布名稱為G Major，寬600單位，高250單位
+script type="text/python3" </p>
+<p>用python3來繪圖</p>
+<p>canvas = doc["G Major"]</p>
+<p>畫布 = G Major</p>
+<p>ctx = canvas.getContext("2d")</p>
+<p>畫2d圖形</p>
+<p>for i in range(N):</p>
+<p>for迴圈跑n次</p>
+<p>ctx.lineWidth = ??</p>
+<p>線寬 = ??</p>
+<p>ctx.strokeStyle = "blue"</p>
+<p>線的顏色是blue</p>
+<p>ctx.closePath()</p>
+<p>結束繪圖
+ctx.fillStyle = 'black'</p>
+<p>字體顏色black</p>
+<p>ctx.strokeStyle = "black"</p>
+<p>字體輪廓black</p>
+<p>ctx.font = "25px Arial"</p>
+<p>字型格式 = 大小25px 並使用Arial的字型</p>
+<p>ctx.fillText("G Major", 110, 25)</p>
+<p>套用在G Major，寬110單位，高25單位</p>
+<p>心得:先學會要如何建立你要的大小畫布，先設一個點座標再用move移動到你要的點連成一線，還要會建立線寬顏色使用ctx.strokestyle = "(顏色)"
+        ctx.lineWidth = (數字寬度)的指令</p>
             </div>
             <!-- /.entry-content -->
         </article>

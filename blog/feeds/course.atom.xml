@@ -30,7 +30,33 @@
 &lt;p&gt;學習到利用 random 模組產生特定範圍內的整數&lt;/p&gt;
 &lt;p&gt;猜對印出比正確數字大或小的提示, 直到使用者猜對或因累計至預設猜謎次數後跳出while迴圈&lt;/p&gt;
 &lt;p&gt;用程式來寫遊戲那麼有趣, 讓我對這塊領域又更感興趣&lt;/p&gt;
-&lt;p&gt;繪圖心得:&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>猜數字遊戲</title><link href="./cai-shu-zi-you-xi.html" rel="alternate"></link><published>2017-01-12T13:00:00+08:00</published><updated>2017-01-12T13:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-01-12:./cai-shu-zi-you-xi.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;p&gt;繪圖心得:
+canvas id="G Major" width="600" height="250"&lt;/p&gt;
+&lt;p&gt;畫布名稱為G Major，寬600單位，高250單位
+script type="text/python3" &lt;/p&gt;
+&lt;p&gt;用python3來繪圖&lt;/p&gt;
+&lt;p&gt;canvas = doc["G Major"]&lt;/p&gt;
+&lt;p&gt;畫布 = G Major&lt;/p&gt;
+&lt;p&gt;ctx = canvas.getContext("2d")&lt;/p&gt;
+&lt;p&gt;畫2d圖形&lt;/p&gt;
+&lt;p&gt;for i in range(N):&lt;/p&gt;
+&lt;p&gt;for迴圈跑n次&lt;/p&gt;
+&lt;p&gt;ctx.lineWidth = ??&lt;/p&gt;
+&lt;p&gt;線寬 = ??&lt;/p&gt;
+&lt;p&gt;ctx.strokeStyle = "blue"&lt;/p&gt;
+&lt;p&gt;線的顏色是blue&lt;/p&gt;
+&lt;p&gt;ctx.closePath()&lt;/p&gt;
+&lt;p&gt;結束繪圖
+ctx.fillStyle = 'black'&lt;/p&gt;
+&lt;p&gt;字體顏色black&lt;/p&gt;
+&lt;p&gt;ctx.strokeStyle = "black"&lt;/p&gt;
+&lt;p&gt;字體輪廓black&lt;/p&gt;
+&lt;p&gt;ctx.font = "25px Arial"&lt;/p&gt;
+&lt;p&gt;字型格式 = 大小25px 並使用Arial的字型&lt;/p&gt;
+&lt;p&gt;ctx.fillText("G Major", 110, 25)&lt;/p&gt;
+&lt;p&gt;套用在G Major，寬110單位，高25單位&lt;/p&gt;
+&lt;p&gt;心得:先學會要如何建立你要的大小畫布，先設一個點座標再用move移動到你要的點連成一線，還要會建立線寬顏色使用ctx.strokestyle = "(顏色)"
+        ctx.lineWidth = (數字寬度)的指令&lt;/p&gt;</summary><category term="Brython"></category></entry><entry><title>猜數字遊戲</title><link href="./cai-shu-zi-you-xi.html" rel="alternate"></link><published>2017-01-12T13:00:00+08:00</published><updated>2017-01-12T13:00:00+08:00</updated><author><name>40223154</name></author><id>tag:,2017-01-12:./cai-shu-zi-you-xi.html</id><summary type="html">&lt;!-- PELICAN_END_SUMMARY --&gt;
 
 &lt;p&gt;首先了解 random 亂數模組的用法&lt;/p&gt;
 &lt;p&gt;然後利用 random 模組產生一個介於 1-100 的整數, 列印在網頁上.&lt;/p&gt;
