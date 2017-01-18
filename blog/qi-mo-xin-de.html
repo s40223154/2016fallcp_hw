@@ -170,13 +170,13 @@ init_mathjax();
 
         <meta name="author" content="40223154" />
         <meta name="keywords" content="Brython" />
-        <meta name="description" content="產生亂數心得: 隨機亂數 (可額外加上print印出結果) 隨機挑選0~49的數字 num = random.randint(1, 49) 數字在1-49之間 for i in range(6) 我要產生出6個號碼 print_location &lt;= &#34;恭喜中獎!&#34; + html.BR() 產生後我要印出恭喜中獎+換行 心得: 學到利用亂數模組產生 取得使用者所猜整數，根據使用者與標準答案比較大小，並且回應提示字串 單線旋轉動畫心得: 猜數字心得: 1.print會列印在主控台 2.第二種列印資料方法利用alert利用broswer模組import 3.真正實用第三種用這個id跟con1 = document[&#34;con&#34;]的document做綁定 綁定好再用特殊語法 con1&lt;=document[&#34;con&#34;] 需要跳行要用 + html.BR()來跳行 利用try ， except來執行 ..." />
+        <meta name="description" content="產生亂數心得: 隨機亂數 (可額外加上print印出結果) 隨機挑選0~49的數字 num = random.randint(1, 49) 數字在1-49之間 for i in range(6) 我要產生出6個號碼 print_location &lt;= &#34;恭喜中獎!&#34; + html.BR() 產生後我要印出恭喜中獎+換行 心得: 學到利用亂數模組產生 取得使用者所猜整數，根據使用者與標準答案比較大小，並且回應提示字串 單線旋轉動畫心得: 這次重點主要在於要會使用 逐一重新繪製直線與圓心球 1 2 3 4 5 6 7 8 9x2 = x1 + r*math.cos(theta*deg) y2 = y1 + r ..." />
 
         <meta property="og:site_name" content="2016Fall CPA 課程網誌 (虎尾科大MDE)" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="期末心得"/>
         <meta property="og:url" content="./qi-mo-xin-de.html"/>
-        <meta property="og:description" content="產生亂數心得: 隨機亂數 (可額外加上print印出結果) 隨機挑選0~49的數字 num = random.randint(1, 49) 數字在1-49之間 for i in range(6) 我要產生出6個號碼 print_location &lt;= &#34;恭喜中獎!&#34; + html.BR() 產生後我要印出恭喜中獎+換行 心得: 學到利用亂數模組產生 取得使用者所猜整數，根據使用者與標準答案比較大小，並且回應提示字串 單線旋轉動畫心得: 猜數字心得: 1.print會列印在主控台 2.第二種列印資料方法利用alert利用broswer模組import 3.真正實用第三種用這個id跟con1 = document[&#34;con&#34;]的document做綁定 綁定好再用特殊語法 con1&lt;=document[&#34;con&#34;] 需要跳行要用 + html.BR()來跳行 利用try ， except來執行 ..."/>
+        <meta property="og:description" content="產生亂數心得: 隨機亂數 (可額外加上print印出結果) 隨機挑選0~49的數字 num = random.randint(1, 49) 數字在1-49之間 for i in range(6) 我要產生出6個號碼 print_location &lt;= &#34;恭喜中獎!&#34; + html.BR() 產生後我要印出恭喜中獎+換行 心得: 學到利用亂數模組產生 取得使用者所猜整數，根據使用者與標準答案比較大小，並且回應提示字串 單線旋轉動畫心得: 這次重點主要在於要會使用 逐一重新繪製直線與圓心球 1 2 3 4 5 6 7 8 9x2 = x1 + r*math.cos(theta*deg) y2 = y1 + r ..."/>
         <meta property="article:published_time" content="2017-01-13" />
             <meta property="article:section" content="Course" />
             <meta property="article:tag" content="Brython" />
@@ -325,7 +325,30 @@ init_mathjax();
 <p>print_location &lt;= "恭喜中獎!" + html.BR()</p>
 <p>產生後我要印出恭喜中獎+換行</p>
 <p>心得: 學到利用亂數模組產生 取得使用者所猜整數，根據使用者與標準答案比較大小，並且回應提示字串</p>
-<p>單線旋轉動畫心得:</p>
+<p>單線旋轉動畫心得:
+這次重點主要在於要會使用 </p>
+<h1>逐一重新繪製直線與圓心球</h1>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>x2 = x1 + r*math.cos(theta*deg)
+y2 = y1 + r*math.sin(theta*deg)  
+line(x1,y1,x2,y2)
+#再加一條小線段
+x3 = x2 + 50*math.cos(10*theta*deg)
+y3 = y2 + 50*math.sin(10*theta*deg)
+line(x2,y2,x3,y3)
+circle(x1,y1,5)
+theta += 1
+</pre></div>
+</td></tr></table>
+
+<p>要會算轉動的角度，起點設於圓心，每隔特定時間進行動畫繪製，逐一重新繪製直線與圓心球跟以往只畫一條線有許多的差別。</p>
 <p>猜數字心得:
 1.print會列印在主控台
 2.第二種列印資料方法利用alert利用broswer模組import

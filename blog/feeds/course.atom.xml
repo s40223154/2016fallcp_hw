@@ -9,7 +9,30 @@
 &lt;p&gt;print_location &amp;lt;= "恭喜中獎!" + html.BR()&lt;/p&gt;
 &lt;p&gt;產生後我要印出恭喜中獎+換行&lt;/p&gt;
 &lt;p&gt;心得: 學到利用亂數模組產生 取得使用者所猜整數，根據使用者與標準答案比較大小，並且回應提示字串&lt;/p&gt;
-&lt;p&gt;單線旋轉動畫心得:&lt;/p&gt;
+&lt;p&gt;單線旋轉動畫心得:
+這次重點主要在於要會使用 &lt;/p&gt;
+&lt;h1&gt;逐一重新繪製直線與圓心球&lt;/h1&gt;
+&lt;table class="codehilitetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;x2 = x1 + r*math.cos(theta*deg)
+y2 = y1 + r*math.sin(theta*deg)  
+line(x1,y1,x2,y2)
+#再加一條小線段
+x3 = x2 + 50*math.cos(10*theta*deg)
+y3 = y2 + 50*math.sin(10*theta*deg)
+line(x2,y2,x3,y3)
+circle(x1,y1,5)
+theta += 1
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;要會算轉動的角度，起點設於圓心，每隔特定時間進行動畫繪製，逐一重新繪製直線與圓心球跟以往只畫一條線有許多的差別。&lt;/p&gt;
 &lt;p&gt;猜數字心得:
 1.print會列印在主控台
 2.第二種列印資料方法利用alert利用broswer模組import
